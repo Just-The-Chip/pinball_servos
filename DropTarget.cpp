@@ -24,7 +24,11 @@ DropTarget::DropTarget(
   servomax = _servomax;
   servomin = _servomin;
 
+  isResetting = false;
+  resetTime = 0;
+
   pinMode(pinIn, INPUT_PULLUP);
+  pwm->setPWM(servonum, 0, servomin);
 }
 
 void DropTarget::setMessageQueue(MessageQueue* queue) {

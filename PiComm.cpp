@@ -8,7 +8,7 @@ PiComm::PiComm() {
 
 // expected message format: 
 void PiComm::handleIncomingMessages(MessageHandler* handlers[]) {
-  uint8_t max_id = sizeof(handlers) / sizeof(handlers[0]);
+  uint8_t max_id = HANDLERS_LENGTH;
   while(available() > 0) {
     unsigned char message[MESSAGE_LENGTH];
 
@@ -43,7 +43,9 @@ void PiComm::writeQueuedMessages() {
 }
 
 int PiComm::available() {
-  return Serial.available() / MESSAGE_LENGTH;
+  int av = Serial.available();
+
+  return av / MESSAGE_LENGTH;
 }
 
 void PiComm::writeMessage(PiMessage message) {

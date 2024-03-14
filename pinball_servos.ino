@@ -12,7 +12,7 @@
 
 // a bunch of handler IDS are on the other board so even though
 // there is only three components we have to have space for all IDs. 
-MessageHandler* handlers[14];
+MessageHandler* handlers[HANDLERS_LENGTH];
 
 DropTarget *dropTarget1;
 DropTarget *dropTarget2;
@@ -33,13 +33,13 @@ void setup() {
   comm = new PiComm();
 
   // top left drop targets
-  dropTarget1 = new DropTarget(pwm, 0, SERVOMAX, SERVOMAX, DROP_PIN_1, HIGH);
-  dropTarget2 = new DropTarget(pwm, 1, SERVOMAX, SERVOMAX, DROP_PIN_2, HIGH);
-  dropTarget3 = new DropTarget(pwm, 2, SERVOMAX, SERVOMAX, DROP_PIN_3, HIGH);
+  dropTarget1 = new DropTarget(pwm, 0, SERVOMIN, SERVOMAX, DROP_PIN_1, HIGH);
+  dropTarget2 = new DropTarget(pwm, 1, SERVOMIN, SERVOMAX, DROP_PIN_2, HIGH);
+  dropTarget3 = new DropTarget(pwm, 2, SERVOMIN, SERVOMAX, DROP_PIN_3, HIGH);
 
-  setupDropTarget(dropTarget1, 4);
-  setupDropTarget(dropTarget2, 5);
-  setupDropTarget(dropTarget3, 6);
+  setupDropTarget(dropTarget1, 11);
+  setupDropTarget(dropTarget2, 12);
+  setupDropTarget(dropTarget3, 13);
 }
 
 void setupDropTarget(DropTarget *component, uint8_t id) {
