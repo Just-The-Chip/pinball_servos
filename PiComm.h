@@ -6,7 +6,7 @@
 
 #define MESSAGE_TERMINATOR '\n'
 #define MESSAGE_LENGTH 3
-#define HANDLERS_LENGTH 14
+#define HANDLERS_LENGTH 15
 
 struct PiMessage {
   uint8_t id;

@@ -37,9 +37,9 @@ void setup() {
   dropTarget2 = new DropTarget(pwm, 1, SERVOMIN, SERVOMAX, DROP_PIN_2, HIGH);
   dropTarget3 = new DropTarget(pwm, 2, SERVOMIN, SERVOMAX, DROP_PIN_3, HIGH);
 
-  setupDropTarget(dropTarget1, 11);
-  setupDropTarget(dropTarget2, 12);
-  setupDropTarget(dropTarget3, 13);
+  setupDropTarget(dropTarget1, 12);
+  setupDropTarget(dropTarget2, 13);
+  setupDropTarget(dropTarget3, 14);
 }
 
 void setupDropTarget(DropTarget *component, uint8_t id) {
